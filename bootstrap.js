@@ -1,6 +1,8 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, globalShortcut} = require('electron');
 const url = require('url');
 const path = require('path');
+//UI compponets
+const Menu = require('./src/js/menu');
 let win;
 function createWindow () {
 	let file = url.format({
@@ -12,9 +14,13 @@ function createWindow () {
 
 	//win.loadFile('./index.html');
 	win.loadURL(file);
-
-	win.openDevTools();
-
+	//icon 
+	win.setIcon('./icon-192.png');
+	//DevTools command
+	globalShortcut.register('CommandOrControl+d', () => {
+		win.webContents.toggleDevTools()
+	})
+	//closed event
 	win.on('closed', () => {
 	  win = null
 	})
