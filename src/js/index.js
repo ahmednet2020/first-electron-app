@@ -5,9 +5,9 @@ const btnClose = document.querySelector('#btnclose');
 const menu = new Menu();
 
 menu.append(new MenuItem({
-		label: 'hello',
+		label: 'Refresh',
 		click() {
-		  btnClose.textContent = 'hello world'
+			window.location.reload();
 		}
 	}))
 btnClose.addEventListener('click', () => {
