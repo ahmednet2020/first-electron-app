@@ -1,6 +1,10 @@
-const {Menu} = require('electron')
+const {Menu} = require('electron');
 
 const template = [{
+     label: 'add',
+     click() {
+     }
+    },{
       label: 'Menu',
       submenu: [
         {role: 'undo'},
@@ -17,4 +21,5 @@ const template = [{
       ]
     }]
 const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
+
+module.exports = menu;

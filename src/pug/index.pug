@@ -1,0 +1,12 @@
+extends html
+block body
+	h1 hello world from electron app
+	button(type="button" id="btnclose") close this window
+	div We are using node 
+		script document.write(process.versions.node)
+		| Chrome 
+		script document.write(process.versions.chrome)
+		| and Electron
+		script document.write(process.versions.electron)
+
+	script(src='js/index.js')

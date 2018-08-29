@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+
+//dirction page
+$dir:ltr;
+
+
+//components & mixin
+@import './components/var',
+		'./components/mixin',
+		'./components/normalize',
+		'./components/typography';
+
+//module
+//@import './module/preload';
+
+
+//layout
+@import './layout/header';
+//form
+@import './form/form',
+		'./form/button';
