@@ -1,7 +1,7 @@
 const { app } = require('electron');
 const globalShortcut = require('./src/config/globalShortcut');
 //UI compponets
-const mainWindow = require('./src/ui-components/mainWindow');
+const mainWindow = require('./src/js/ui-components/mainWindow');
 app.on('ready', () => {
 	globalShortcut();
 	mainWindow();

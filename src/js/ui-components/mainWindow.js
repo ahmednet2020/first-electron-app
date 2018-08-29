@@ -9,15 +9,13 @@ const menu = require('./menu');
 function createWindow () {
 	let file = url.format({
 		protocol:'file:',
-		pathname:path.join(__dirname, '../../app/index.html'),
+		pathname:path.join(__dirname, '../../../app/index.html'),
 		slashes:true
 	});
-	mainWindow = new BrowserWindow({width:1000, height: 500});
+	mainWindow = new BrowserWindow({width:1000, height: 500,frame:false,transparent:true});
 
 	//win.loadFile('./index.html');
 	mainWindow.loadURL(file);
-	//icon 
-	mainWindow.setIcon('./icon-192.png');
 	//closed event
 	mainWindow.on('closed', () => {
 		mainWindow = null;

@@ -5,7 +5,8 @@ module.exports =
     },
     dist: {
       files: {
-        "./app/js/index.js": "./src/js/index.js",
+        "./app/js/btnTop.js": "./src/js/btnTop.js",
+        "./app/js/index.js": "./src/js/index.js"
       }
     }
 }

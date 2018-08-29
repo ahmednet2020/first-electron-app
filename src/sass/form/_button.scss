@@ -1,10 +1,35 @@
 /*======================
 ====== start buttons style =======
 ======================*/
-button
+.btn-top
 {
-
+	background: transparent;
+    background: linear-gradient(transparent 15%, rgba(0,0,0,0.2) 50%, transparent);
+    border: 1px solid rgba(#000, 0.3);
+    border-radius: 3px;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+    &[aria-label='close']:hover
+    {
+    	background: rgb(255,0,0);
+	    background: linear-gradient(rgba(255,0,0,0.7) 15%, rgba(255,0,0,1) 50%, rgba(255,0,0,0.7) 85%);
+    }
+    &[aria-label='maximize']:hover,
+    &[aria-label='unmaximize']:hover
+    {
+    	background: rgb(0,0,255);
+	    background: linear-gradient(rgba(0,0,255,0.7) 15%, rgba(0,0,255,1) 50%, rgba(0,0,255,0.7) 85%);
+    }
+    &[aria-label='minmize']:hover
+    {
+    	background: rgb(0,255,0);
+	    background: linear-gradient(rgba(0,255,0,0.7) 15%, rgba(0,255,0,1) 50%, rgba(0,255,0,0.7) 85%);
+    }						
 }
+	
 /*======================
 ====== end buttons style =======
 ======================*/

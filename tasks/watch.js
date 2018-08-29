@@ -13,4 +13,11 @@ module.exports = {
 	      debounceDelay: 250,
 	    },
 	},
+	pug:{
+		files: './src/js/**/*.js',
+	    tasks: ['babel'],
+	    options: {
+	      debounceDelay: 250,
+	    },
+	},
 }

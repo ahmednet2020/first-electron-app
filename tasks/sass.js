@@ -6,7 +6,7 @@ module.exports = {
         //outputStyle:"compressed"
     },
     dist: {
-        data: {
+        files: {
             './app/css/index.css': './src/sass/index.scss'
         }
     }

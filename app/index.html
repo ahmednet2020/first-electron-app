@@ -20,15 +20,25 @@
     <meta name="keyword" content="keyword">
     <!-- fonts link-->
     <!-- css style link-->
+    <link href="css/index.css" rel="stylesheet">
   </head>
   <body>
-    <h1>hello world from electron app</h1>
-    <button type="button" id="btnclose">close this window</button>
-    <div>We are using node 
-      <script>document.write(process.versions.node)</script>Chrome 
-      <script>document.write(process.versions.chrome)</script>and Electron
-      <script>document.write(process.versions.electron)</script>
+    <div class="top-bar">
+      <div class="blur"></div>
+      <button class="btn btn-top" type="button" id="minimze" aria-label="minmize">-</button>
+      <button class="btn btn-top" type="button" id="size" aria-label="maximize">O</button>
+      <button class="btn btn-top" type="button" id="close" aria-label="close">X</button>
     </div>
+    <div class="content">
+      <h1>hello world from electron app</h1>
+      <button type="button" id="btnclose">close this window</button>
+      <div>We are using node 
+        <script>document.write(process.versions.node)</script>Chrome 
+        <script>document.write(process.versions.chrome)</script>and Electron
+        <script>document.write(process.versions.electron)</script>
+      </div>
+    </div>
+    <script src="js/btnTop.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
