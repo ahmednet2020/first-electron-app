@@ -1,6 +1,6 @@
 /*======================
-====== start buttons style =======
-======================*/
+    ====== start buttons style =======
+    ======================*/
 .btn-top
 {
 	background: transparent;
@@ -14,8 +14,8 @@
     transition: background 0.5s ease-in-out;
     &[aria-label='close']:hover
     {
-    	background: rgb(255,0,0);
-	    background: linear-gradient(rgba(255,0,0,0.7) 15%, rgba(255,0,0,1) 50%, rgba(255,0,0,0.7) 85%);
+        background: rgb(255,0,0);
+        background: linear-gradient(rgba(255,0,0,0.7) 15%, rgba(255,0,0,1) 50%, rgba(255,0,0,0.7) 85%);
     }
     &[aria-label='maximize']:hover,
     &[aria-label='unmaximize']:hover
@@ -27,9 +27,9 @@
     {
     	background: rgb(0,255,0);
 	    background: linear-gradient(rgba(0,255,0,0.7) 15%, rgba(0,255,0,1) 50%, rgba(0,255,0,0.7) 85%);
-    }						
+    }
 }
 	
 /*======================
-====== end buttons style =======
-======================*/
+    ====== end buttons style =======
+    ======================*/

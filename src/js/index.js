@@ -1,7 +1,7 @@
 const { remote } = require('electron');
 const {Menu, MenuItem} = remote;
 
-
+//start menu item
 const menu = new Menu();
 menu.append(new MenuItem({
 		label: 'Refresh',
@@ -14,3 +14,4 @@ window.addEventListener('contextmenu', (e) => {
     menu.popup({window: remote.getCurrentWindow()})
   }, false)
 
+//end menu item

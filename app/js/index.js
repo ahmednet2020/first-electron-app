@@ -6,6 +6,7 @@ var _require = require('electron'),
 var Menu = remote.Menu,
     MenuItem = remote.MenuItem;
 
+//start menu item
 
 var menu = new Menu();
 menu.append(new MenuItem({
@@ -18,3 +19,6 @@ window.addEventListener('contextmenu', function (e) {
 	e.preventDefault();
 	menu.popup({ window: remote.getCurrentWindow() });
 }, false);
+
+//end menu item
+//# sourceMappingURL=maps/index.js.map

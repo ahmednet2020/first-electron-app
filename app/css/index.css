@@ -135,7 +135,7 @@ h6 {
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 100;
     z-index: -1;
     background-color: #fff;
     -webkit-filter: blur(50px);
@@ -144,7 +144,7 @@ h6 {
 header {
   background-color: #000;
   color: #fff;
-  font-size: 102px; }
+  font-size: 16px; }
 
 /*======================
 ====== start forms style =======
@@ -153,8 +153,8 @@ header {
 ====== end forms style =======
 ======================*/
 /*======================
-====== start buttons style =======
-======================*/
+    ====== start buttons style =======
+    ======================*/
 .btn-top {
   background: transparent;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, transparent), color-stop(50%, rgba(0, 0, 0, 0.2)), to(transparent));
@@ -181,6 +181,7 @@ header {
     background: linear-gradient(rgba(0, 255, 0, 0.7) 15%, lime 50%, rgba(0, 255, 0, 0.7) 85%); }
 
 /*======================
-====== end buttons style =======
-======================*/
-/*# sourceMappingURL=index.css.map */
+    ====== end buttons style =======
+    ======================*/
+
+/*# sourceMappingURL=maps/index.css.map */

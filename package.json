@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "win": "electron-packager . electron-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/icon.ico --prune=true --out=builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"welcome app\""
+    "win": "electron-packager . electron-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/icon.ico --prune=true --out=builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"welcome app\"",
+    "dev":"gulp"
   },
   "keywords": [],
   "author": "ahmednet2020",
@@ -17,13 +18,13 @@
     "babel-preset-env": "^1.7.0",
     "electron": "^2.0.8",
     "electron-packager": "^12.1.1",
-    "grunt": "^1.0.3",
-    "grunt-babel": "^7.0.0",
-    "grunt-contrib-pug": "^1.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^3.0.1",
-    "load-grunt-tasks": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
     "node-sass": "^4.9.3"
   }
 }

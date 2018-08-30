@@ -2,10 +2,20 @@ const { app } = require('electron');
 const globalShortcut = require('./src/config/globalShortcut');
 //UI compponets
 const mainWindow = require('./src/js/ui-components/mainWindow');
-app.on('ready', () => {
+
+let minwin;
+
+function createWindow()
+{
 	globalShortcut();
-	mainWindow();
-})
+	minwin = new mainWindow();
+	minwin.addFile('./app/index.html');
+	//closed event
+	minwin.on('closed', () => {
+		minwin = null;
+	})
+}
+app.on('ready',createWindow)
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -16,8 +26,7 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-	app.quit();
+	if (minwin === null) {
+      createWindow()
+    }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.

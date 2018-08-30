@@ -4,36 +4,40 @@
 var _require = require('electron'),
     remote = _require.remote;
 
-var btnBar = document.querySelector('.top-bar');
-var btnTop = document.querySelectorAll('.btn-top');
-var down = false;
-var x = 0;
-var y = 0;
-var leave = function leave(e) {
-	e.preventDefault();
-	down = false;
-	x = 0;
-	y = 0;
-};
-btnBar.addEventListener('mousedown', function (e) {
-	e.preventDefault();
-	down = true;
-	x = e.pageX;
-	y = e.pageY;
-});
-btnBar.addEventListener('mouseup', leave);
-btnBar.addEventListener('mouseover', leave);
-btnBar.addEventListener('mouseout', leave);
+// function btn bar
 
-btnBar.addEventListener('mousemove', function (e) {
+
+function btnBar(ele) {
+	this.btn = document.querySelector(ele);
+	this.down = false;
+	this.x = 0;
+	this.y = 0;
+}
+btnBar.prototype.mouseLeave = function (e) {
 	e.preventDefault();
-	if (!down) return;
+	this.down = false;
+	this.x = 0;
+	this.y = 0;
+};
+
+btnBar.prototype.mouseDown = function (e) {
+	e.preventDefault();
+	this.down = true;
+	this.x = e.pageX;
+	this.y = e.pageY;
+};
+
+btnBar.prototype.mouseMove = function (e) {
+	e.preventDefault();
+	if (!this.down) return;
 	var win = remote.getCurrentWindow();
-	var X = Number(win.getPosition()[0] + (e.pageX - x));
-	var Y = Number(win.getPosition()[1] + (e.pageY - y));
+	var X = Number(win.getPosition()[0] + (e.pageX - this.x));
+	var Y = Number(win.getPosition()[1] + (e.pageY - this.y));
 	win.setPosition(X, Y);
-});
-Array.prototype.forEach.call(btnTop, function (ele) {
+};
+
+//function btn clicked
+function btnTopfun(ele) {
 	ele.addEventListener('click', function (e) {
 		var win = remote.getCurrentWindow();
 		e.preventDefault();
@@ -56,4 +60,12 @@ Array.prototype.forEach.call(btnTop, function (ele) {
 			return;
 		}
 	});
-});
+}
+var btnBarObj = new btnBar('.top-bar');
+btnBarObj.btn.addEventListener('mouseup', btnBarObj.mouseLeave);
+btnBarObj.btn.addEventListener('mouseover', btnBarObj.mouseLeave);
+btnBarObj.btn.addEventListener('mouseout', btnBarObj.mouseLeave);
+btnBarObj.btn.addEventListener('mousedown', btnBarObj.mouseDown);
+btnBarObj.btn.addEventListener('mousemove', btnBarObj.mouseMove);
+Array.prototype.forEach.call(document.querySelectorAll('.btn-top'), btnTopfun);
+//# sourceMappingURL=maps/btnTop.js.map

@@ -1,36 +1,39 @@
 // start remote
 const { remote } = require('electron');
 
-const btnBar = document.querySelector('.top-bar');
-const btnTop = document.querySelectorAll('.btn-top');
-let down = false;
-let x = 0;
-let y = 0;
-let leave = (e) => {
+// function btn bar
+function btnBar(ele) {
+	this.btn = document.querySelector(ele);
+	this.down = false;
+	this.x = 0;
+	this.y = 0;
+}
+btnBar.prototype.mouseLeave = function (e) {
 	e.preventDefault();
-	down = false;
-	x=0;
-	y=0;
-};
-btnBar.addEventListener('mousedown', function (e) {
-	e.preventDefault();
-	down = true;
-	x = e.pageX;
-	y = e.pageY; 
-})
-btnBar.addEventListener('mouseup', leave);
-btnBar.addEventListener('mouseover', leave);
-btnBar.addEventListener('mouseout', leave);
+	this.down = false;
+	this.x = 0;
+	this.y = 0;
+}
 
-btnBar.addEventListener('mousemove', function (e) {
+btnBar.prototype.mouseDown = function (e) {
 	e.preventDefault();
-	if(!down) return;
+	this.down = true;
+	this.x = e.pageX;
+	this.y = e.pageY; 
+}
+
+btnBar.prototype.mouseMove = function (e) {
+	e.preventDefault();
+	if(!this.down) return;
 	const win = remote.getCurrentWindow();
-	let X = Number(win.getPosition()[0] + (e.pageX - x));
-	let Y = Number(win.getPosition()[1] + (e.pageY - y));
+	let X = Number(win.getPosition()[0] + (e.pageX - this.x));
+	let Y = Number(win.getPosition()[1] + (e.pageY - this.y));
 	win.setPosition(X, Y);
-})
-Array.prototype.forEach.call(btnTop, ele => {
+}
+
+//function btn clicked
+function btnTopfun(ele)
+{
 	ele.addEventListener('click', function (e) {
 		const win = remote.getCurrentWindow();
 		e.preventDefault();
@@ -56,5 +59,12 @@ Array.prototype.forEach.call(btnTop, ele => {
 			win.minimize();
 			return;
 		}
-	})
-})
+	});
+}
+const btnBarObj = new btnBar('.top-bar');
+btnBarObj.btn.addEventListener('mouseup', btnBarObj.mouseLeave);
+btnBarObj.btn.addEventListener('mouseover', btnBarObj.mouseLeave);
+btnBarObj.btn.addEventListener('mouseout', btnBarObj.mouseLeave);
+btnBarObj.btn.addEventListener('mousedown', btnBarObj.mouseDown);
+btnBarObj.btn.addEventListener('mousemove', btnBarObj.mouseMove)
+Array.prototype.forEach.call(document.querySelectorAll('.btn-top'),btnTopfun);
