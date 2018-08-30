@@ -1,13 +1,12 @@
 const { BrowserWindow}  = require('electron');
-const menu = require('./menu');
 const url = require('url');
 const path = require('path');
 
-class mainWindow extends BrowserWindow
+class addWindow extends BrowserWindow
 {
 	constructor()
 	{
-		super({width:1000, height: 500});
+		super({width:200, height: 500});
 	}
 	addFile(file)
 	{
@@ -17,9 +16,9 @@ class mainWindow extends BrowserWindow
 			slashes:true
 		});
 		this.loadURL(pathFile);
-		this.setMenu(menu);
+		this.setMenu(null);
 		return this;
 	}
 }
 
-module.exports = mainWindow
+module.exports = addWindow

@@ -9,12 +9,13 @@ var Menu = remote.Menu,
 //start menu item
 
 var menu = new Menu();
-menu.append(new MenuItem({
+var refresh = {
 	label: 'Refresh',
 	click: function click() {
 		window.location.reload();
 	}
-}));
+};
+menu.append(new MenuItem(refresh));
 window.addEventListener('contextmenu', function (e) {
 	e.preventDefault();
 	menu.popup({ window: remote.getCurrentWindow() });

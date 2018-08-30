@@ -12,6 +12,7 @@ function createWindow()
 	minwin.addFile('./app/index.html');
 	//closed event
 	minwin.on('closed', () => {
+		minwin.destroy();
 		minwin = null;
 	})
 }

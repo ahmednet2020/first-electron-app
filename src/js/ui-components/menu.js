@@ -1,12 +1,42 @@
 const {Menu} = require('electron');
-
-const template = [{
-     label: 'add',
-     click() {
-     }
-    },{
-      label: 'Menu',
-      submenu: [
+const path = require('path');
+const addWindow = require('./addWindow');
+let addWin;
+let add = {
+    label: 'add',
+    click() {
+        if(addWin)
+        {
+            addWin.destroy();
+            addWin = null;
+        }
+        addWin = new addWindow();
+        addWin.addFile('app/index.html');
+        addWin.on('closed', () => {
+            addWin.destroy();
+            addWin = null;
+        })
+    }
+};
+let wow = {
+    label: 'wow',
+    click() {
+        if(addWin)
+        {
+            addWin.destroy();
+            addWin = null;
+        }
+        addWin = new addWindow();
+        addWin.addFile('app/index.html');
+            addWin.on('closed', () => {
+            addWin.destroy();
+            addWin = null;
+        })
+    }
+};
+let  menu = {
+    label: 'Menu',
+    submenu: [
         {role: 'undo'},
         {role: 'redo'},
         {type: 'separator'},
@@ -18,8 +48,7 @@ const template = [{
         {role: 'selectall'},
         {type: 'separator'},
         {role: 'quit'}
-      ]
-    }]
-const menu = Menu.buildFromTemplate(template);
-
-module.exports = menu;
+    ]
+};
+const template = Menu.buildFromTemplate([add, wow, menu]);
+module.exports = template;
