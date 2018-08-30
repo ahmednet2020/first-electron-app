@@ -1,0 +1,14 @@
+div(class="members")
+	div(class="toggle")
+		button(
+			type="button",
+			aria-label="toggle menu",
+			aria-expanded="false",
+			class="btn-toggle btn-members",
+			data-target="hidden-members")
+			span(class='line')
+	div(class="list")
+		ul
+			-for(let i =0; i<= 5; i++)
+				li
+					button(type='button',class='btn-member')= `room ${i}`

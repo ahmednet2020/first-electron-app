@@ -1,15 +1,17 @@
-const { app } = require('electron');
+const { app, MenuItem } = require('electron');
 const globalShortcut = require('./src/js/config/globalShortcut');
 //UI compponets
 const mainWindow = require('./src/js/ui-components/mainWindow');
+const menu = require('./src/js/ui-components/menu');
 
 let minwin;
 
 function createWindow()
 {
+	
 	globalShortcut();
 	minwin = new mainWindow();
-	minwin.addFile('./app/index.html');
+	minwin.addFile('./public/index.html');
 	//closed event
 	minwin.on('closed', () => {
 		minwin.destroy();

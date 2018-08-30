@@ -15,7 +15,11 @@ $dir:ltr;
 
 
 //layout
-@import './layout/header';
+@import './layout/body',
+        './layout/aside',
+        './layout/members',
+        './layout/content',
+		'./layout/header';
 //form
 @import './form/form',
 		'./form/button';

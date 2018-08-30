@@ -1,7 +1,48 @@
 /*======================
     ====== start buttons style =======
     ======================*/
-	
+.btn-toggle
+{
+	width: 100%;
+    height: 50px;
+	&:before,
+	&:after
+	{
+		content:'';
+		transition: transform 0.5s ease-in-out;
+		will-change: transform;
+	}
+	&:before,
+	&:after,
+	.line
+	{
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color:$main-color;
+	}
+	.line
+	{
+		margin: 5px 0;
+		opacity: 1;
+		transition: opacity 0.5s ease-in-out;
+	}
+	&[aria-expanded='true']
+	{
+		&:before
+		{
+			transform: rotate(45deg) translate(6px, 5px);
+		}
+		&:after
+		{
+			transform: rotate(-45deg) translate(6px, -5px);
+		}
+		.line
+		{
+			opacity: 0;
+		}
+	}
+}
 /*======================
     ====== end buttons style =======
     ======================*/

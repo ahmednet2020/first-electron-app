@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta character set-->
+    <meta charset="utf-8">
+    <!--  Always force latest IE rendering engine or request Chrome Frame-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--  Mobile Specific Meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#39b3f1">
+    <!--  manifest.json provides metadata used when your web app is added to thehomescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="icon-192.png">
+    <!--  Site Title-->
+    <title>electron app</title>
+    <!--  Meta Description-->
+    <meta name="description" content="description">
+    <!--  Meta Keyword-->
+    <meta name="keyword" content="keyword">
+    <!-- fonts link-->
+    <!-- css style link-->
+    <link href="css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <aside>
+      <div class="list">
+        <ul>
+          <li>
+            <button class="btn-room" type="button">room 0</button>
+          </li>
+          <li>
+            <button class="btn-room" type="button">room 1</button>
+          </li>
+          <li>
+            <button class="btn-room" type="button">room 2</button>
+          </li>
+          <li>
+            <button class="btn-room" type="button">room 3</button>
+          </li>
+          <li>
+            <button class="btn-room" type="button">room 4</button>
+          </li>
+          <li>
+            <button class="btn-room" type="button">room 5</button>
+          </li>
+        </ul>
+      </div>
+      <div class="toggle">
+        <button class="btn-toggle btn-aside" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-list"><span class="line"></span></button>
+      </div>
+    </aside>
+    <div class="content">
+      <h1>hello world from electron app</h1>
+      <button type="button" id="btnclose">close this window</button>
+      <div>We are using node 
+        <script>document.write(process.versions.node)</script>Chrome 
+        <script>document.write(process.versions.chrome)</script>and Electron
+        <script>document.write(process.versions.electron)</script>
+      </div>
+    </div>
+    <div class="members">
+      <div class="toggle">
+        <button class="btn-toggle btn-members" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-members"><span class="line"></span></button>
+      </div>
+      <div class="list">
+        <ul>
+          <li>
+            <button class="btn-member" type="button">room 0</button>
+          </li>
+          <li>
+            <button class="btn-member" type="button">room 1</button>
+          </li>
+          <li>
+            <button class="btn-member" type="button">room 2</button>
+          </li>
+          <li>
+            <button class="btn-member" type="button">room 3</button>
+          </li>
+          <li>
+            <button class="btn-member" type="button">room 4</button>
+          </li>
+          <li>
+            <button class="btn-member" type="button">room 5</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

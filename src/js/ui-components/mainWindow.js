@@ -1,5 +1,4 @@
 const { BrowserWindow}  = require('electron');
-const menu = require('./menu');
 const url = require('url');
 const path = require('path');
 
@@ -17,7 +16,6 @@ class mainWindow extends BrowserWindow
 			slashes:true
 		});
 		this.loadURL(pathFile);
-		this.setMenu(menu);
 		return this;
 	}
 }
