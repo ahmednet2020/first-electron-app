@@ -7,7 +7,7 @@ class mainWindow extends BrowserWindow
 {
 	constructor()
 	{
-		super({width:1000, height: 500,frame:false,transparent:false});
+		super({width:1000, height: 500});
 	}
 	addFile(file)
 	{
