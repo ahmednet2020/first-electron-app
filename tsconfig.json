@@ -1,0 +1,19 @@
+{
+	"compilerOptions":{
+		"module":"es6",
+		"target":"es5",
+		"strict": true,
+		"noImplicitAny": true,
+		"noImplicitThis": false,
+		"removeComments":true,
+		"sourceMap": false,
+		"outDir": "public/",
+		"baseUrl": "./",
+		"rootDir":"./src/ts",
+		"paths": {
+			"electron": ["node_modules/electron/electron.d.ts"]
+		}
+	},
+	"include":["src/ts/**/*"],
+	"exclude": ["node_modules"]
+}

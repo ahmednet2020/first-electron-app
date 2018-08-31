@@ -1,10 +1,10 @@
-const { remote } = require('electron');
-const {Menu, MenuItem} = remote;
+import { remote } from 'electron';
+const { Menu, MenuItem } = remote;
 
-const content = document.querySelector('.content');
-const btnToggle = document.querySelectorAll('.btn-toggle');
+const content:any = document.querySelector('.content');
+const btnToggle:any = document.querySelectorAll('.btn-toggle');
 
-function btnTogglefun(e) {
+function btnTogglefun(e:any):void {
     e.preventDefault();
     if(this.getAttribute('aria-expanded') === 'true')
     {
@@ -15,7 +15,7 @@ function btnTogglefun(e) {
         this.setAttribute('aria-expanded','true');
     }
 }
-Array.prototype.forEach.call(btnToggle, (btn) => {
+Array.prototype.forEach.call(btnToggle, (btn:any):void => {
     btn.addEventListener('click', btnTogglefun );
 });
 //start menu item

@@ -1,22 +1,22 @@
-const {Menu} = require('electron');
-const path = require('path');
-const addWindow = require('./mainWindow');
-let addWin;
-let add = {
+import { Menu , BrowserWindow } from 'electron';
+import URLFile from './URLFile';
+
+let minwin: null | BrowserWindow;
+let add:{} = {
     label: 'add',
     click() {
-        if(addWin)
+        if (minwin)
         {
-            addWin.close();
-            addWin = null;
+            minwin.close();
+            minwin = null;
         }
-        addWin = new addWindow({width:500, height:500},'public/index.html');
-        addWin.setMenu(null);
-        addWin.on('closed', () => {
-            addWin.destroy();
-            addWin = null;
+        minwin = new BrowserWindow({ width: 500, height: 500 });
+        minwin.loadURL(URLFile('index.html'));
+        minwin.setMenu(null);
+        minwin.on('closed', () => {
+            minwin = null;
         })
-    }
+     }
 };
 let  menu = {
     label: 'Menu',
@@ -36,4 +36,4 @@ let  menu = {
 };
 let template = Menu.buildFromTemplate([add, menu]);
 Menu.setApplicationMenu(template);
-module.exports = template;
+export default template;

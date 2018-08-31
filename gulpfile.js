@@ -1,6 +1,8 @@
 'use strict';
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
+const ts = plugins.typescript;
+const tsProject = ts.createProject('tsconfig.json');
 const autoprefixer = require('autoprefixer');
 const browserify = require('browserify');
 const babelify = require('babelify');
@@ -16,6 +18,15 @@ gulp.task('css', () => {
     .pipe(plugins.sourcemaps.write('./maps'))
     .pipe(gulp.dest('./public/css/'));
 });
+gulp.task('ts', function () {
+    return gulp.src('src/ts/**/*.ts')
+        .pipe(tsProject())
+        .pipe(plugins.babel())
+        .on('error', (err) => {
+          console.log(`ts err ${err}`)
+        })
+        .pipe(gulp.dest('public/'));
+});
 
 gulp.task('html', () => {
 	return gulp.src('./src/pug/*.pug')
@@ -27,14 +38,14 @@ gulp.task('html', () => {
 });
 
 gulp.task("js", function () {
-  return gulp.src('./src/js/*.js')
+  return gulp.src('./public/js/**/*.js')
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.babel())
     .on('error', (err) => {
       console.log(`js err ${err}`)
     })
     .pipe(plugins.sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./public/js/'));
+    .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task("browserify", function () {

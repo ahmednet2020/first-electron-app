@@ -1,15 +1,11 @@
 'use strict';
 
-var _require = require('electron'),
-    remote = _require.remote;
+var _electron = require('electron');
 
-var Menu = remote.Menu,
-    MenuItem = remote.MenuItem;
-
-
+var Menu = _electron.remote.Menu,
+    MenuItem = _electron.remote.MenuItem;
 var content = document.querySelector('.content');
 var btnToggle = document.querySelectorAll('.btn-toggle');
-
 function btnTogglefun(e) {
     e.preventDefault();
     if (this.getAttribute('aria-expanded') === 'true') {
@@ -23,7 +19,6 @@ function btnTogglefun(e) {
 Array.prototype.forEach.call(btnToggle, function (btn) {
     btn.addEventListener('click', btnTogglefun);
 });
-//start menu item
 var menu = new Menu();
 var refresh = {
     label: 'Refresh',
@@ -34,8 +29,5 @@ var refresh = {
 menu.append(new MenuItem(refresh));
 window.addEventListener('contextmenu', function (e) {
     e.preventDefault();
-    menu.popup({ window: remote.getCurrentWindow() });
+    menu.popup({ window: _electron.remote.getCurrentWindow() });
 }, false);
-
-//end menu item
-//# sourceMappingURL=maps/index.js.map
