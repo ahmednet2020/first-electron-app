@@ -15,11 +15,10 @@ $dir:ltr;
 
 
 //layout
-@import './layout/body',
-        './layout/aside',
+@import './layout/content',
+        './layout/rooms',
         './layout/members',
-        './layout/content',
-		'./layout/header';
+        './layout/messages';
 //form
 @import './form/form',
 		'./form/button';

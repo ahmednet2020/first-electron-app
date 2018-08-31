@@ -44,13 +44,19 @@ figure {
 .container-fluid {
   position: relative;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  width: 100%;
+  overflow: hidden; }
+
+.container {
+  width: 90%;
+  margin: 0 auto; }
 
 .content {
   background-color: #fff; }
 
 .bg-main {
-  background-color: #c3dbdb; }
+  background-color: #00BCD4; }
 
 /*=== end default style */
 html, body {
@@ -117,122 +123,158 @@ h6 {
   white-space: nowrap; }
 
 /*===== end font style ===== */
-body.hidden-list aside {
-  left: -17%; }
+.content {
+  position: relative;
+  min-height: 800px;
+  height: 800px;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; }
+  .content .col-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    z-index: 999; }
+  .content .toggle {
+    width: 15%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 15%;
+            flex: 1 0 15%;
+    color: #fff;
+    background-color: #313131;
+    padding: 10px;
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; }
+  .content .list {
+    width: 85%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 85%;
+            flex: 1 0 85%;
+    background-color: #00BCD4; }
+  .content.hidden-room .rooms {
+    left: -17%; }
+  .content.hidden-room .messages {
+    margin-left: 3%; }
+  .content.hidden-members .members {
+    right: -17%; }
+  .content.hidden-members .messages {
+    margin-right: 3%; }
 
-body.hidden-list .content {
-  margin-left: 3%; }
-
-body.hidden-members .members {
-  right: -17%; }
-
-body.hidden-members .content {
-  margin-right: 3%; }
-
-aside {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  z-index: 999;
-  background: #0f0;
-  bottom: 0;
-  top: 0;
+.rooms {
   left: 0;
   -webkit-transition: left 0.5s ease-in-out;
   transition: left 0.5s ease-in-out;
-  width: 20%;
+  will-change: position, left;
   overflow: auto; }
-  aside .list,
-  aside .toggle {
-    padding: 10px;
-    text-align: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0; }
-  aside .list {
-    width: 85%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 85%;
-            flex: 1 0 85%; }
-  aside .toggle {
-    width: 15%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 15%;
-            flex: 1 0 15%;
-    background-color: #ff0;
-    -webkit-box-shadow: -3px 0px 3px 3px rgba(204, 204, 204, 0.49);
-            box-shadow: -3px 0px 3px 3px rgba(204, 204, 204, 0.49); }
-  aside button {
-    width: 100%; }
-  aside li {
-    margin: 10px 0; }
-  aside .btn-room {
-    padding: 10px 0; }
+  .rooms .toggle {
+    -webkit-box-shadow: -3px 0px 3px 3px rgba(255, 255, 255, 0.5);
+            box-shadow: -3px 0px 3px 3px rgba(255, 255, 255, 0.5); }
 
 .members {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  z-index: 999;
-  background: #0f0;
-  bottom: 0;
-  top: 0;
   right: 0;
   -webkit-transition: right 0.5s ease-in-out;
   transition: right 0.5s ease-in-out;
-  width: 20%;
+  will-change: position, right;
   overflow: auto; }
-  .members .list,
   .members .toggle {
-    padding: 10px;
-    text-align: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0; }
-  .members .list {
-    width: 85%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 85%;
-            flex: 1 0 85%; }
-  .members .toggle {
-    width: 15%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 15%;
-            flex: 1 0 15%;
-    background-color: #ff0;
-    -webkit-box-shadow: -3px 0px 3px 3px rgba(204, 204, 204, 0.49);
-            box-shadow: -3px 0px 3px 3px rgba(204, 204, 204, 0.49); }
-  .members button {
-    width: 100%; }
-  .members li {
-    margin: 10px 0; }
-  .members .btn-room {
-    padding: 10px 0; }
+    -webkit-box-shadow: 3px 0px 3px 3px rgba(255, 255, 255, 0.5);
+            box-shadow: 3px 0px 3px 3px rgba(255, 255, 255, 0.5); }
 
-.content {
+.messages {
+  display: block;
+  margin: 0 20%;
   -webkit-transition: margin 0.5s ease-in-out;
   transition: margin 0.5s ease-in-out;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 10px;
-  overflow: auto; }
-
-header {
-  background-color: #000;
-  color: #fff;
-  font-size: 16px; }
+  will-change: margin;
+  overflow: hidden;
+  height: 100%; }
+  .messages .messages-list {
+    overflow: auto;
+    height: 90%; }
+  .messages .message {
+    margin: 10px 0;
+    text-align: left; }
+  .messages .message-data {
+    padding: 10px;
+    background-color: #00BCD4;
+    color: #fff;
+    border-radius: 15px;
+    margin-top: 10px;
+    position: relative; }
+    .messages .message-data:before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 10px;
+      z-index: 1;
+      border: 10px solid #00BCD4;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top: 0; }
+  .messages .message-box {
+    padding: 10px 0;
+    background-color: #313131;
+    height: 10%; }
+    .messages .message-box .container {
+      height: 100%; }
 
 /*======================
 ====== start forms style =======
 ======================*/
+#messageBox {
+  height: 100%; }
+  #messageBox .message-input {
+    display: inline-block;
+    width: 84%;
+    height: 100%;
+    position: relative;
+    color: #fff;
+    text-transform: capitalize; }
+  #messageBox .send-message {
+    display: inline-block;
+    width: 15%;
+    height: 100%; }
+  #messageBox .label-text {
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 0; }
+  #messageBox input {
+    display: inline-block;
+    height: 100%;
+    width: 100%; }
+  #messageBox input[type='text'] {
+    background-color: transparent;
+    color: #fff; }
+    #messageBox input[type='text']:valid + label {
+      display: none; }
+  #messageBox input[type='submit'] {
+    background-color: #00BCD4;
+    color: #fff;
+    cursor: pointer; }
+
 /*======================
 ====== end forms style =======
 ======================*/
 /*======================
     ====== start buttons style =======
     ======================*/
+.btn {
+  padding: 10px 0;
+  width: 100%;
+  margin: 10px 0;
+  color: inherit;
+  background: inherit; }
+
+.btn-white {
+  color: #fff; }
+
 .btn-toggle {
   width: 100%;
   height: 50px; }
@@ -248,7 +290,7 @@ header {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #c3dbdb; }
+    background-color: #fff; }
   .btn-toggle .line {
     margin: 5px 0;
     opacity: 1;

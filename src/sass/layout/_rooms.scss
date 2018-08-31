@@ -1,0 +1,13 @@
+//start aside
+.rooms
+{
+    left: 0;
+    transition: left 0.5s ease-in-out;
+    will-change: position, left;
+    overflow: auto;
+    .toggle
+    {
+        box-shadow: -3px 0px 3px 3px rgba($white-color,0.5);
+    }
+}
+//end aside

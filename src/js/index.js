@@ -1,23 +1,23 @@
 const { remote } = require('electron');
 const {Menu, MenuItem} = remote;
 
-const body = document.querySelector('body');
-const btnToggle = document.querySelector('.btn-aside');
-const btnMembers = document.querySelector('.btn-members');
+const content = document.querySelector('.content');
+const btnToggle = document.querySelectorAll('.btn-toggle');
 
 function btnTogglefun(e) {
     e.preventDefault();
     if(this.getAttribute('aria-expanded') === 'true')
     {
-        body.classList.remove(this.dataset.target);
+        content.classList.remove(this.dataset.target);
         this.setAttribute('aria-expanded','false');
     } else {
-        body.classList.add(this.dataset.target);
+        content.classList.add(this.dataset.target);
         this.setAttribute('aria-expanded','true');
     }
 }
-btnToggle.addEventListener('click',btnTogglefun);
-btnMembers.addEventListener('click', btnTogglefun)
+Array.prototype.forEach.call(btnToggle, (btn) => {
+    btn.addEventListener('click', btnTogglefun );
+});
 //start menu item
 const menu = new Menu();
 let refresh = {

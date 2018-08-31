@@ -23,69 +23,151 @@
     <link href="css/index.css" rel="stylesheet">
   </head>
   <body>
-    <aside>
-      <div class="list">
-        <ul>
-          <li>
-            <button class="btn-room" type="button">room 0</button>
-          </li>
-          <li>
-            <button class="btn-room" type="button">room 1</button>
-          </li>
-          <li>
-            <button class="btn-room" type="button">room 2</button>
-          </li>
-          <li>
-            <button class="btn-room" type="button">room 3</button>
-          </li>
-          <li>
-            <button class="btn-room" type="button">room 4</button>
-          </li>
-          <li>
-            <button class="btn-room" type="button">room 5</button>
-          </li>
-        </ul>
+    <div class="container-fluid">
+      <div class="content">
+        <div class="col-list rooms">
+          <div class="rooms-list list">
+            <ul>
+              <li>
+                <button class="btn btn-white" type="button">room 0</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 1</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 2</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 3</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 4</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 5</button>
+              </li>
+            </ul>
+          </div>
+          <div class="toggle">
+            <button class="btn btn-toggle" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-room"><span class="line"></span></button>
+          </div>
+        </div>
+        <div class="messages">
+          <div class="messages-list">
+            <div class="container">
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+              <div class="message">
+                <h4 class="message-sander">ahmed</h4>
+                <div class="message-data">
+                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="message-box">
+            <div class="container">
+              <form id="messageBox">
+                <div class="message-input">
+                  <input type="text" name="message-input" value="" id="messageInput" required>
+                  <label class="label-text" for="messageInput">enter your message text ...</label>
+                </div>
+                <div class="send-message">
+                  <label>
+                    <input type="submit" name="send-message" value="send">
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-list members">
+          <div class="toggle">
+            <button class="btn btn-toggle" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-members"><span class="line"></span></button>
+          </div>
+          <div class="members-list list">
+            <ul>
+              <li>
+                <button class="btn btn-white" type="button">room 0</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 1</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 2</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 3</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 4</button>
+              </li>
+              <li>
+                <button class="btn btn-white" type="button">room 5</button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="toggle">
-        <button class="btn-toggle btn-aside" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-list"><span class="line"></span></button>
-      </div>
-    </aside>
-    <div class="content">
-      <h1>hello world from electron app</h1>
-      <button type="button" id="btnclose">close this window</button>
-      <div>We are using node 
-        <script>document.write(process.versions.node)</script>Chrome 
-        <script>document.write(process.versions.chrome)</script>and Electron
-        <script>document.write(process.versions.electron)</script>
-      </div>
+      <script src="js/index.js"></script>
     </div>
-    <div class="members">
-      <div class="toggle">
-        <button class="btn-toggle btn-members" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-members"><span class="line"></span></button>
-      </div>
-      <div class="list">
-        <ul>
-          <li>
-            <button class="btn-member" type="button">room 0</button>
-          </li>
-          <li>
-            <button class="btn-member" type="button">room 1</button>
-          </li>
-          <li>
-            <button class="btn-member" type="button">room 2</button>
-          </li>
-          <li>
-            <button class="btn-member" type="button">room 3</button>
-          </li>
-          <li>
-            <button class="btn-member" type="button">room 4</button>
-          </li>
-          <li>
-            <button class="btn-member" type="button">room 5</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <script src="js/index.js"></script>
   </body>
 </html>

@@ -1,14 +1,14 @@
-div(class="members")
+div(class="col-list members")
 	div(class="toggle")
 		button(
 			type="button",
 			aria-label="toggle menu",
 			aria-expanded="false",
-			class="btn-toggle btn-members",
+			class="btn btn-toggle",
 			data-target="hidden-members")
 			span(class='line')
-	div(class="list")
+	div(class="members-list list")
 		ul
 			-for(let i =0; i<= 5; i++)
 				li
-					button(type='button',class='btn-member')= `room ${i}`
+					button(type='button',class='btn btn-white')= `room ${i}`

@@ -1,0 +1,8 @@
+div(class='messages')
+	div(class='messages-list')
+		div(class='container')
+			-for(let i = 0; i <= 10; i++)
+				include message
+	div(class='message-box')
+		div(class='container')
+			include inputMessage

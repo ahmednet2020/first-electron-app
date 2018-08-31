@@ -10,8 +10,7 @@ function createWindow()
 {
 	
 	globalShortcut();
-	minwin = new mainWindow();
-	minwin.addFile('./public/index.html');
+	minwin = new mainWindow({width:1000, height:1000},'public/index.html');
 	//closed event
 	minwin.on('closed', () => {
 		minwin.destroy();

@@ -1,47 +1,13 @@
 //start members
 .members
 {
-	display: flex;
-    position: fixed;
-    z-index: 999;
-    background: #0f0;
-    bottom: 0;
-    top: 0;
     right: 0;
     transition: right 0.5s ease-in-out;
-    width: 20%;
+    will-change: position, right;
     overflow: auto;
-    .list,
     .toggle
     {
-	   	padding: 10px;
-	   	text-align: center;
-        position: sticky;
-        top: 0;
-    }
-    .list
-    {
-	    width: 85%;
-	    flex:1 0 85%;
-    }
-    .toggle
-    {
-	    width: 15%;
-	    flex:1 0 15%;
-	    background-color: #ff0;
-	    box-shadow: -3px 0px 3px 3px rgba(204, 204, 204, 0.49);
-    }
-    button
-    {
-        width: 100%;
-    }
-    li
-    {
-        margin: 10px 0;
-    }
-    .btn-room
-    {
-        padding: 10px 0;
+        box-shadow: 3px 0px 3px 3px rgba($white-color,0.5);
     }
 }
 //end members

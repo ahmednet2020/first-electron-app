@@ -10,8 +10,7 @@ let add = {
             addWin.close();
             addWin = null;
         }
-        addWin = new addWindow();
-        addWin.addFile('public/index.html');
+        addWin = new addWindow({width:500, height:500},'public/index.html');
         addWin.setMenu(null);
         addWin.on('closed', () => {
             addWin.destroy();

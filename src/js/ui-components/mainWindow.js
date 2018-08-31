@@ -4,9 +4,11 @@ const path = require('path');
 
 class mainWindow extends BrowserWindow
 {
-	constructor()
+	constructor(view, file)
 	{
-		super({width:1000, height: 500});
+		super(view);
+		this.file = this.addFile(file);
+		this.loadURL(this.file);
 	}
 	addFile(file)
 	{
@@ -15,8 +17,7 @@ class mainWindow extends BrowserWindow
 			pathname:path.join(__dirname, '../../../',`${file}`),
 			slashes:true
 		});
-		this.loadURL(pathFile);
-		return this;
+		return pathFile;
 	}
 }
 

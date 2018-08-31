@@ -1,8 +1,57 @@
 .content
 {
-    transition: margin 0.5s ease-in-out;
-    margin-left: 20%;
-    margin-right: 20%;
-    padding: 10px;
-   	overflow: auto;
+	position: relative;
+    min-height: 800px;
+	height: 800px;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	.col-list
+	{
+		display: flex;
+		position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    width: 20%;
+    	z-index: 999;
+	}
+    .toggle
+    {
+        width: 15%;
+        flex:1 0 15%;
+        color: $white-color;
+        background-color: $text-color;
+        padding: 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+    }
+    .list
+    {
+        width: 85%;
+        flex:1 0 85%;
+        background-color: $main-color;
+    }
+	&.hidden-room
+    {
+        .rooms
+        {
+            left: -17%;
+        }
+        .messages
+        {
+            margin-left: 3%;
+        }
+    }
+    &.hidden-members
+    {
+        .members
+        {
+            right: -17%;
+        }
+        .messages
+        {
+            margin-right: 3%;
+        }
+    }
 }

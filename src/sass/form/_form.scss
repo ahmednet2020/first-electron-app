@@ -1,6 +1,58 @@
 /*======================
 ====== start forms style =======
 ======================*/
+#messageBox
+{
+	height: 100%;
+	.message-input
+	{
+		display: inline-block;
+	    width: 84%;
+	    height: 100%;
+	    position: relative;
+	    color: $white-color;
+	    text-transform: capitalize;
+	}
+	.send-message
+	{
+		display: inline-block;
+		width: 15%;
+		height: 100%;
+	}
+	.label-text
+	{
+		display: block;
+		position: absolute;
+	    top: 35%;
+	    left: 0;
+	}
+	input
+	{
+		display: inline-block;
+		height: 100%;
+	    width: 100%;
+	}
+	input[type='text']
+	{
+	    background-color: transparent;
+	    color: $white-color;
+	    &:valid
+	    {
+	    	& + label
+	    	{
+	    		display: none;
+	    	}
+	    }
+	}
+	input[type='submit']
+	{
+	    background-color: $main-color;
+	    color: $white-color;
+	    cursor: pointer;
+	}
+}
+
+
 
 /*======================
 ====== end forms style =======

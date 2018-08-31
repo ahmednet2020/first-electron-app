@@ -1,0 +1,50 @@
+.messages
+{
+	display: block;
+    margin: 0 20%;
+    transition: margin 0.5s ease-in-out;
+    will-change: margin;
+    overflow: hidden;
+    height: 100%;
+    .messages-list
+    {
+        overflow: auto;
+        height: 90%;
+    }
+    .message
+    {
+    	margin: 10px 0;
+    	text-align: left;
+    }
+    .message-data
+    {
+    	padding: 10px;
+    	background-color: $main-color;
+    	color: $white-color;
+    	border-radius: 15px;
+    	margin-top: 10px;
+   	 	position: relative;
+    	&:before
+    	{
+    		content: '';
+		    position: absolute;
+		    top: -8px;
+		    left: 10px;
+		    z-index: 1;
+		    border: 10px solid $main-color;
+		    border-left-color: transparent;
+		    border-right-color: transparent;
+		    border-top: 0;
+    	}
+    }
+    .message-box
+    {
+        padding: 10px 0;
+        background-color: $text-color;
+        height: 10%;
+        .container
+        {
+            height: 100%;
+        }
+    }
+}

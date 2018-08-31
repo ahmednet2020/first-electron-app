@@ -7,22 +7,22 @@ var Menu = remote.Menu,
     MenuItem = remote.MenuItem;
 
 
-var body = document.querySelector('body');
-var btnToggle = document.querySelector('.btn-aside');
-var btnMembers = document.querySelector('.btn-members');
+var content = document.querySelector('.content');
+var btnToggle = document.querySelectorAll('.btn-toggle');
 
 function btnTogglefun(e) {
     e.preventDefault();
     if (this.getAttribute('aria-expanded') === 'true') {
-        body.classList.remove(this.dataset.target);
+        content.classList.remove(this.dataset.target);
         this.setAttribute('aria-expanded', 'false');
     } else {
-        body.classList.add(this.dataset.target);
+        content.classList.add(this.dataset.target);
         this.setAttribute('aria-expanded', 'true');
     }
 }
-btnToggle.addEventListener('click', btnTogglefun);
-btnMembers.addEventListener('click', btnTogglefun);
+Array.prototype.forEach.call(btnToggle, function (btn) {
+    btn.addEventListener('click', btnTogglefun);
+});
 //start menu item
 var menu = new Menu();
 var refresh = {

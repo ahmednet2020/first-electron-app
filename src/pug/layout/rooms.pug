@@ -1,0 +1,14 @@
+div(class='col-list rooms')
+	div(class="rooms-list list")
+		ul
+			-for(let i =0; i<= 5; i++)
+				li
+					button(type='button',class='btn btn-white')= `room ${i}`
+	div(class="toggle")
+		button(
+			type="button",
+			aria-label="toggle menu",
+			aria-expanded="false",
+			class="btn btn-toggle",
+			data-target="hidden-room")
+			span(class='line')
