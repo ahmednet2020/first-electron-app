@@ -9,5 +9,17 @@
     {
         box-shadow: -3px 0px 3px 3px rgba($white-color,0.5);
     }
+    li
+    {
+        transition:background 0.2s ease-in-out;
+        &.active
+        {
+            background-color: #0f0;
+    	    .btn
+    	    {
+    			color: $text-color;	
+    	    }
+    	}
+    }
 }
 //end aside

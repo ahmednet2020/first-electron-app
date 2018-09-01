@@ -180,6 +180,13 @@ h6 {
   .rooms .toggle {
     -webkit-box-shadow: -3px 0px 3px 3px rgba(255, 255, 255, 0.5);
             box-shadow: -3px 0px 3px 3px rgba(255, 255, 255, 0.5); }
+  .rooms li {
+    -webkit-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out; }
+    .rooms li.active {
+      background-color: #0f0; }
+      .rooms li.active .btn {
+        color: #313131; }
 
 .members {
   right: 0;
@@ -197,10 +204,12 @@ h6 {
   .members .state {
     width: 10px;
     height: 10px;
-    background: #00f941;
+    background-color: #313131;
     display: inline-block;
     border-radius: 50%;
     margin-right: 10px; }
+    .members .state.online {
+      background-color: #00f941; }
 
 .messages {
   display: block;
@@ -286,7 +295,11 @@ h6 {
   padding: 10px 0;
   width: 100%;
   color: inherit;
-  background: inherit; }
+  background: inherit;
+  font-size: 18px;
+  text-transform: capitalize;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out; }
 
 .btn-white {
   color: #fff; }
