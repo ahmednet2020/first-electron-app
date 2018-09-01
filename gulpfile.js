@@ -9,24 +9,33 @@ const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 
-gulp.task('css', () => {
-  return gulp.src('./src/sass/*.scss')
-  	.pipe(plugins.sourcemaps.init())
-    .pipe(plugins.sass())
-    .on('error', plugins.sass.logError)
-    .pipe(plugins.postcss([ autoprefixer({browsers: 'last 2 versions'}) ]))
-    .pipe(plugins.sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./public/css/'));
-});
+
 gulp.task('ts', function () {
     return gulp.src('src/ts/**/*.ts')
         .pipe(tsProject())
+        .pipe(plugins.sourcemaps.init({loadMaps: true}))
         .pipe(plugins.babel())
         .on('error', (err) => {
           console.log(`ts err ${err}`)
         })
+        .pipe(plugins.sourcemaps.write('./maps'))
         .pipe(gulp.dest('public/'));
 });
+gulp.task("browserify", function () {
+  return browserify({
+    entries: ['./public/js/apiKey.js'],
+    debug: true
+  }).bundle()
+    .on('error', err => console.log(`browserify ${err}`))
+    .pipe(source('apiKey.js'))
+    .pipe(buffer())
+    .pipe(plugins.sourcemaps.init({loadMaps: true}))
+    .pipe(plugins.sourcemaps.write('./maps'))
+    .pipe(gulp.dest('./public/js/'));
+});
+ // =================================
+ // ======= start html config========
+ // =================================
 
 gulp.task('html', () => {
 	return gulp.src('./src/pug/*.pug')
@@ -36,36 +45,43 @@ gulp.task('html', () => {
 	})
 	.pipe(gulp.dest('./public/'));
 });
+ // =================================
+ // ======= end html config========
+ // =================================
 
-gulp.task("js", function () {
-  return gulp.src('./public/js/**/*.js')
+// =================================
+// ======= start css config========
+// =================================
+
+gulp.task('css', () => {
+  return gulp.src('./src/sass/*.scss')
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.babel())
-    .on('error', (err) => {
-      console.log(`js err ${err}`)
-    })
+    .pipe(plugins.sass())
+    .on('error', plugins.sass.logError)
+    .pipe(plugins.postcss([ autoprefixer({browsers: 'last 2 versions'}) ]))
     .pipe(plugins.sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./public/js'));
+    .pipe(gulp.dest('./public/css/'));
 });
 
-gulp.task("browserify", function () {
-  return browserify({
-  	entries: ['./src/js/index.js'],
-    debug: true
-  }).transform('babelify')
-  	.bundle()
-  	.on('error', err => console.log(`browserify ${err}`))
-  	.pipe(source('app.js'))
-  	.pipe(buffer())
-    .pipe(plugins.sourcemaps.init({loadMaps: true}))
-    .pipe(plugins.sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./public/js/'));
-});
+// =================================
+// ======= end css config========
+// =================================
+
+// =================================
+// ===== start watch config ========
+// =================================
 
 gulp.task('watch', () => {
-  gulp.watch(['./src/sass/**/*.scss'], ['css']);
-  gulp.watch(['./src/pug/**/*.pug'], ['html']);
-  gulp.watch(['./src/js/**/*.js'], ['js']);
+  gulp.watch('./src/sass/**/*.scss', ['css']);
+  gulp.watch('./src/pug/**/*.pug', ['html']);
+  gulp.watch('./src/ts/**/*.ts', ['ts', 'browserify']);
 });
 
-gulp.task('default',['html', 'css', 'js', 'watch'])
+// =================================
+// ===== end watch config ========
+// =================================
+
+// =================================
+// ======= default config run ========
+// =================================
+gulp.task('default',['html', 'css', 'ts', 'browserify', 'watch'])

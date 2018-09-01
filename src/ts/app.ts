@@ -9,7 +9,7 @@ function createWindow(): void
 {
 	
 	shortCut();
-	minwin = new BrowserWindow({ width: 500, height: 100 });
+	minwin = new BrowserWindow({ width: 1000, height: 500 });
 	minwin.loadURL(URLFile('index.html'));
 	//closed event
 	minwin.on('closed', () => {

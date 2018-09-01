@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var minwin;
 function createWindow() {
     (0, _globalShortcut2.default)();
-    minwin = new _electron.BrowserWindow({ width: 500, height: 100 });
+    minwin = new _electron.BrowserWindow({ width: 1000, height: 500 });
     minwin.loadURL((0, _URLFile2.default)('index.html'));
     minwin.on('closed', function () {
         minwin = null;
@@ -35,3 +35,4 @@ _electron.app.on('activate', function () {
         createWindow();
     }
 });
+//# sourceMappingURL=maps/app.js.map

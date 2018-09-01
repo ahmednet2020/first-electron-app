@@ -9,5 +9,20 @@
     {
         box-shadow: 3px 0px 3px 3px rgba($white-color,0.5);
     }
+    .member
+    {
+    	text-align: center;
+    	color: $white-color;
+    	padding: 10px 0;
+    }
+    .state
+    {
+    	width: 10px;
+	    height: 10px;
+	    background: #00f941;
+	    display: inline-block;
+	    border-radius: 50%;
+	    margin-right: 10px;
+    }
 }
 //end members

@@ -13,6 +13,7 @@
   "author": "ahmednet2020",
   "license": "MIT",
   "devDependencies": {
+    "@pusher/chatkit": "^0.7.17",
     "autoprefixer": "^9.1.3",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
@@ -28,7 +29,6 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^5.0.0-alpha.3",
-    "node-sass": "^4.9.3",
     "typescript": "^3.0.3",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"

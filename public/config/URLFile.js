@@ -23,3 +23,4 @@ function addFile(file) {
     return pathFile;
 }
 exports.default = addFile;
+//# sourceMappingURL=../maps/config/URLFile.js.map

@@ -31,3 +31,4 @@ window.addEventListener('contextmenu', function (e) {
     e.preventDefault();
     menu.popup({ window: _electron.remote.getCurrentWindow() });
 }, false);
+//# sourceMappingURL=../maps/js/index.js.map

@@ -1,9 +1,7 @@
 div(class='col-list rooms')
 	div(class="rooms-list list")
-		ul
-			-for(let i =0; i<= 5; i++)
-				li
-					button(type='button',class='btn btn-white')= `room ${i}`
+		h5(class='list-title') room list
+		ul(id='rooms-ul')
 	div(class="toggle")
 		button(
 			type="button",

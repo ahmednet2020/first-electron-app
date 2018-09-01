@@ -13,3 +13,4 @@ function shortCut() {
     });
 }
 exports.default = shortCut;
+//# sourceMappingURL=../maps/config/globalShortcut.js.map

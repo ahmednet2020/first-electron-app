@@ -27,101 +27,16 @@
       <div class="content">
         <div class="col-list rooms">
           <div class="rooms-list list">
-            <ul>
-              <li>
-                <button class="btn btn-white" type="button">room 0</button>
-              </li>
-              <li>
-                <button class="btn btn-white" type="button">room 1</button>
-              </li>
-              <li>
-                <button class="btn btn-white" type="button">room 2</button>
-              </li>
-              <li>
-                <button class="btn btn-white" type="button">room 3</button>
-              </li>
-              <li>
-                <button class="btn btn-white" type="button">room 4</button>
-              </li>
-              <li>
-                <button class="btn btn-white" type="button">room 5</button>
-              </li>
-            </ul>
+            <h5 class="list-title">room list</h5>
+            <ul id="rooms-ul"></ul>
           </div>
           <div class="toggle">
             <button class="btn btn-toggle" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-room"><span class="line"></span></button>
           </div>
         </div>
         <div class="messages">
-          <div class="messages-list">
-            <div class="container">
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-              <div class="message">
-                <h4 class="message-sander">ahmed</h4>
-                <div class="message-data">
-                  <p class="message-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio vero, sint quia commodi aut!</p><span class="time">11:20-1-10-2018</span>
-                </div>
-              </div>
-            </div>
+          <div class="messages-list" id="messagesList">
+            <p>select a chat Room;</p>
           </div>
           <div class="message-box">
             <div class="container">
@@ -144,30 +59,50 @@
             <button class="btn btn-toggle" type="button" aria-label="toggle menu" aria-expanded="false" data-target="hidden-members"><span class="line"></span></button>
           </div>
           <div class="members-list list">
+            <h5 class="list-title">members in the room</h5>
             <ul>
               <li>
-                <button class="btn btn-white" type="button">room 0</button>
+                <div class="member">
+                  <h6 class="member-name">ahmed</h6>
+                  <p class="member-state"><span class="state"></span>online</p>
+                </div>
               </li>
               <li>
-                <button class="btn btn-white" type="button">room 1</button>
+                <div class="member">
+                  <h6 class="member-name">ahmed</h6>
+                  <p class="member-state"><span class="state"></span>online</p>
+                </div>
               </li>
               <li>
-                <button class="btn btn-white" type="button">room 2</button>
+                <div class="member">
+                  <h6 class="member-name">ahmed</h6>
+                  <p class="member-state"><span class="state"></span>online</p>
+                </div>
               </li>
               <li>
-                <button class="btn btn-white" type="button">room 3</button>
+                <div class="member">
+                  <h6 class="member-name">ahmed</h6>
+                  <p class="member-state"><span class="state"></span>online</p>
+                </div>
               </li>
               <li>
-                <button class="btn btn-white" type="button">room 4</button>
+                <div class="member">
+                  <h6 class="member-name">ahmed</h6>
+                  <p class="member-state"><span class="state"></span>online</p>
+                </div>
               </li>
               <li>
-                <button class="btn btn-white" type="button">room 5</button>
+                <div class="member">
+                  <h6 class="member-name">ahmed</h6>
+                  <p class="member-state"><span class="state"></span>online</p>
+                </div>
               </li>
             </ul>
           </div>
         </div>
       </div>
       <script src="js/index.js"></script>
+      <script src="js/apiKey.js"></script>
     </div>
   </body>
 </html>

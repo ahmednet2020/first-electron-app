@@ -1,17 +1,18 @@
 {
 	"compilerOptions":{
 		"module":"es6",
+		 "lib": ["es2015.promise","es5","dom"],
 		"target":"es5",
 		"strict": true,
 		"noImplicitAny": true,
 		"noImplicitThis": false,
 		"removeComments":true,
-		"sourceMap": false,
+		"sourceMap": true,
 		"outDir": "public/",
 		"baseUrl": "./",
 		"rootDir":"./src/ts",
 		"paths": {
-			"electron": ["node_modules/electron/electron.d.ts"]
+			"electron": ["node_modules/electron/electron.d.ts"],
 		}
 	},
 	"include":["src/ts/**/*"],

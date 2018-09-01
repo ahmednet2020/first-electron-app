@@ -35,3 +35,4 @@ var menu = {
 var template = _electron.Menu.buildFromTemplate([add, menu]);
 _electron.Menu.setApplicationMenu(template);
 exports.default = template;
+//# sourceMappingURL=../maps/config/menu.js.map

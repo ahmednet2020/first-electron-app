@@ -152,11 +152,16 @@ h6 {
     position: sticky;
     top: 0; }
   .content .list {
+    padding: 10px 0;
     width: 85%;
     -webkit-box-flex: 1;
         -ms-flex: 1 0 85%;
             flex: 1 0 85%;
     background-color: #00BCD4; }
+  .content .list-title {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center; }
   .content.hidden-room .rooms {
     left: -17%; }
   .content.hidden-room .messages {
@@ -185,6 +190,17 @@ h6 {
   .members .toggle {
     -webkit-box-shadow: 3px 0px 3px 3px rgba(255, 255, 255, 0.5);
             box-shadow: 3px 0px 3px 3px rgba(255, 255, 255, 0.5); }
+  .members .member {
+    text-align: center;
+    color: #fff;
+    padding: 10px 0; }
+  .members .state {
+    width: 10px;
+    height: 10px;
+    background: #00f941;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px; }
 
 .messages {
   display: block;
@@ -195,6 +211,7 @@ h6 {
   overflow: hidden;
   height: 100%; }
   .messages .messages-list {
+    padding: 0 15px;
     overflow: auto;
     height: 90%; }
   .messages .message {
@@ -268,7 +285,6 @@ h6 {
 .btn {
   padding: 10px 0;
   width: 100%;
-  margin: 10px 0;
   color: inherit;
   background: inherit; }
 
