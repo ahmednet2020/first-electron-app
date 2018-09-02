@@ -3,9 +3,16 @@
 var _electron = require('electron');
 
 var Menu = _electron.remote.Menu,
-    MenuItem = _electron.remote.MenuItem;
+    MenuItem = _electron.remote.MenuItem,
+    BrowserWindow = _electron.remote.BrowserWindow;
 var content = document.querySelector('.content');
 var btnToggle = document.querySelectorAll('.btn-toggle');
+document.addEventListener("DOMContentLoaded", function (event) {
+    setTimeout(function () {
+        var win = _electron.remote.getCurrentWindow();
+        win.show();
+    }, 5000);
+});
 function btnTogglefun(e) {
     e.preventDefault();
     if (this.getAttribute('aria-expanded') === 'true') {

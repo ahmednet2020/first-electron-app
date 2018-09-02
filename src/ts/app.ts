@@ -7,14 +7,20 @@ let minwin:null | BrowserWindow;
 
 function createWindow(): void
 {
-	
-	shortCut();
-	minwin = new BrowserWindow({ width: 1000, height: 500 });
+	let preload = new BrowserWindow({ width: 500, height: 500, frame: false, transparent: true, center: true });
+	preload.loadURL(URLFile('preload.html'))
+	minwin = new BrowserWindow({ width: 1000, height: 500,center:true});
+	minwin.hide();
 	minwin.loadURL(URLFile('index.html'));
 	//closed event
 	minwin.on('closed', () => {
 		minwin = null;
 	})
+	minwin.on('show', () => {
+		preload.close();
+		preload.destroy();
+	})
+	shortCut();
 }
 app.on('ready',createWindow)
 

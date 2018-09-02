@@ -16,12 +16,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var minwin;
 function createWindow() {
-    (0, _globalShortcut2.default)();
-    minwin = new _electron.BrowserWindow({ width: 1000, height: 500 });
+    var preload = new _electron.BrowserWindow({ width: 500, height: 500, frame: false, transparent: true, center: true });
+    preload.loadURL((0, _URLFile2.default)('preload.html'));
+    minwin = new _electron.BrowserWindow({ width: 1000, height: 500, center: true });
+    minwin.hide();
     minwin.loadURL((0, _URLFile2.default)('index.html'));
     minwin.on('closed', function () {
         minwin = null;
     });
+    minwin.on('show', function () {
+        preload.close();
+        preload.destroy();
+    });
+    (0, _globalShortcut2.default)();
 }
 _electron.app.on('ready', createWindow);
 _electron.app.on('window-all-closed', function () {

@@ -15,9 +15,6 @@ gulp.task('ts', function () {
         .pipe(tsProject())
         .pipe(plugins.sourcemaps.init({loadMaps: true}))
         .pipe(plugins.babel())
-        .on('error', (err) => {
-          console.log(`ts err ${err}`)
-        })
         .pipe(plugins.sourcemaps.write('./maps'))
         .pipe(gulp.dest('public/'));
 });
@@ -74,7 +71,7 @@ gulp.task('css', () => {
 gulp.task('watch', () => {
   gulp.watch('./src/sass/**/*.scss', ['css']);
   gulp.watch('./src/pug/**/*.pug', ['html']);
-  gulp.watch('./src/ts/**/*.ts', ['ts', 'browserify']);
+  gulp.watch('./src/ts/**/*.ts', ['ts']);
 });
 
 // =================================
@@ -84,4 +81,4 @@ gulp.task('watch', () => {
 // =================================
 // ======= default config run ========
 // =================================
-gulp.task('default',['html', 'css', 'ts', 'browserify', 'watch'])
+gulp.task('default',['html', 'css', 'ts', 'watch'])

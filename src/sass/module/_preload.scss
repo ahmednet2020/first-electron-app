@@ -1,6 +1,49 @@
 /*======================
 ====== start preload =======
 ======================*/
+.preload
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+	.text
+	{
+		color: #fff;
+	    font-size: 50px;
+	    text-align: center;
+	    display: block;
+	    text-transform: uppercase;
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+	    -webkit-text-stroke: 1px $text-color;
+	    animation: text 1s linear infinite; 
+	    margin: auto;
+	    background-color: #0f0;
+	    background-image: linear-gradient(45deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+		background-size: 500px;
+		background-position: 0 top;
+    	cursor: pointer;
+	}
+}
+@keyframes text {
+	0%
+	{
+		background-position: 0 top;
+	}
+	100%
+	{
+		background-position: 500px center;
+	}
+}
 
 /*======================
 ====== end preload =======

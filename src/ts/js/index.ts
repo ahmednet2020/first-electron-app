@@ -1,9 +1,14 @@
 import { remote } from 'electron';
-const { Menu, MenuItem } = remote;
+const { Menu, MenuItem, BrowserWindow } = remote;
 
 const content:any = document.querySelector('.content');
-const btnToggle:any = document.querySelectorAll('.btn-toggle');
-
+const btnToggle: any = document.querySelectorAll('.btn-toggle');
+document.addEventListener("DOMContentLoaded", function(event) {
+    setTimeout(()=> {
+        let win = remote.getCurrentWindow();
+        win.show();
+    }, 5000)
+});
 function btnTogglefun(e:any):void {
     e.preventDefault();
     if(this.getAttribute('aria-expanded') === 'true')
@@ -31,5 +36,4 @@ window.addEventListener('contextmenu', (e) => {
     e.preventDefault()
     menu.popup({window: remote.getCurrentWindow()})
   }, false)
-
 //end menu item

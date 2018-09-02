@@ -5,7 +5,9 @@ const url: string = 'https://us1.pusherplatform.io/services/chatkit_token_provid
 let user: any;
 const messagesList: HTMLElement = <HTMLElement>document.querySelector("#messagesList");
 const roomsUl: HTMLElement = <HTMLElement>document.querySelector("#rooms-ul");
-const membersUl: HTMLElement = <HTMLElement>document.querySelector("#members-ul"); 
+const membersUl: HTMLElement = <HTMLElement>document.querySelector("#members-ul");
+const messageBox: HTMLElement = <HTMLElement>document.querySelector("#messageBox");
+const messageInput: HTMLElement = <HTMLElement>document.querySelector("#messageInput");
 
 
 const chatManager:ChatManager = new ChatManager({
@@ -45,8 +47,9 @@ function printRoom(room: any)
 function Subscriptions(e: Event): void
 {
 	e.preventDefault();
-	let roomId = Number(this.dataset.id);
-	let el = this.parentNode;
+	let roomId:number = Number(this.dataset.id);
+	let el:any = this.parentNode;
+	messageBox.dataset.roomId = String(roomId);
 	messagesList.innerHTML = '';
 	for (let key in user.roomSubscriptions) {
 		user.roomSubscriptions[key].cancel()
@@ -105,3 +108,32 @@ function printUsers(users:any[]) {
 	});
 	return members;
 }
+function sendMessage(text: string, roomId: number) {
+	user.sendMessage({
+		text,
+		roomId,
+		}).then((messageId:any) => {
+			console.log(`Added message to`)
+		}).catch ((err:any) => {
+		console.log(`Error adding message to ${err}`)
+	})
+}
+messageBox.addEventListener('submit', function(e:Event|any) {
+	e.preventDefault();
+	if (!this.dataset.roomId) {
+		alert('select room pleasse');
+		return;
+	}
+	let roomId:any = Number(this.dataset.roomId);
+	let text:any = e.target.messageInput.value;
+	sendMessage(text, roomId);
+	e.target.reset();
+});
+messageInput.addEventListener('focus', function(e:Event) {
+	if(messageBox.dataset.roomId)
+	{
+		console.log('wow');
+	} else {
+		console.log('noroom')
+	}
+})

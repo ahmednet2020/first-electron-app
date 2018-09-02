@@ -10,12 +10,5 @@ $dir:ltr;
 		'./components/normalize',
 		'./components/typography';
 
-
-//layout
-@import './layout/content',
-        './layout/rooms',
-        './layout/members',
-        './layout/messages';
-//form
-@import './form/form',
-		'./form/button';
+//module
+@import './module/preload';
