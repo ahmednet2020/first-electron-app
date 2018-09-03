@@ -16,7 +16,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var minwin;
 function createWindow() {
-    var preload = new _electron.BrowserWindow({ width: 500, height: 500, frame: false, transparent: true, center: true });
+    var preload = new _electron.BrowserWindow({
+        width: 500,
+        height: 500,
+        frame: false,
+        transparent: true,
+        center: true
+    });
     preload.loadURL((0, _URLFile2.default)('preload.html'));
     minwin = new _electron.BrowserWindow({ width: 1000, height: 500, center: true });
     minwin.hide();

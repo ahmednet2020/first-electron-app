@@ -7,7 +7,12 @@ let minwin:null | BrowserWindow;
 
 function createWindow(): void
 {
-	let preload = new BrowserWindow({ width: 500, height: 500, frame: false, transparent: true, center: true });
+	let preload = new BrowserWindow({
+			width: 500,
+			height: 500,
+			frame: false,
+			transparent: true,
+			center: true });
 	preload.loadURL(URLFile('preload.html'))
 	minwin = new BrowserWindow({ width: 1000, height: 500,center:true});
 	minwin.hide();

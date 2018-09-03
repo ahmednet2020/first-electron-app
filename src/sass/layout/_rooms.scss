@@ -12,13 +12,10 @@
     li
     {
         transition:background 0.2s ease-in-out;
-        &.active
+        &.active,
+        &:hover
         {
-            background-color: #0f0;
-    	    .btn
-    	    {
-    			color: $text-color;	
-    	    }
+            background-color: $main-color;
     	}
     }
 }

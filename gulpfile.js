@@ -81,4 +81,4 @@ gulp.task('watch', () => {
 // =================================
 // ======= default config run ========
 // =================================
-gulp.task('default',['html', 'css', 'ts', 'watch'])
+gulp.task('default',['html', 'css', 'ts'])

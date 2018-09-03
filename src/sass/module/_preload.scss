@@ -33,6 +33,18 @@
 		background-position: 0 top;
     	cursor: pointer;
 	}
+	span
+	{
+	    animation: span 10s linear infinite;
+	    @for $i from 1 through 10
+	    {
+			&:nth-child(#{$i})
+		    {
+		    	animation-delay: #{$i - 10}s;
+		    }
+	    }
+	    
+	}
 }
 @keyframes text {
 	0%
@@ -42,6 +54,16 @@
 	100%
 	{
 		background-position: 500px center;
+	}
+}
+@keyframes span {
+	0%, 20%,30%,40%,50%,60%,70%,80%,90%,100%
+	{
+		font-size:50px;
+	}
+	10%
+	{
+		font-size:100px;
 	}
 }
 
